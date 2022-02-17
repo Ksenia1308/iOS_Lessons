@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -158,8 +159,20 @@
                     <view key="view" contentMode="scaleToFill" id="GDy-Pa-KLm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q0q-yN-5lp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="o1a-di-RCJ"/>
                         <color key="backgroundColor" red="0.93547368049621582" green="0.77947643471381522" blue="0.72813419162966897" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Q0q-yN-5lp" firstAttribute="top" secondItem="o1a-di-RCJ" secondAttribute="top" id="LPR-JE-JBc"/>
+                            <constraint firstItem="o1a-di-RCJ" firstAttribute="trailing" secondItem="Q0q-yN-5lp" secondAttribute="trailing" id="Z9A-Zo-rkG"/>
+                            <constraint firstItem="o1a-di-RCJ" firstAttribute="bottom" secondItem="Q0q-yN-5lp" secondAttribute="bottom" id="cnv-6W-45L"/>
+                            <constraint firstItem="Q0q-yN-5lp" firstAttribute="leading" secondItem="o1a-di-RCJ" secondAttribute="leading" id="xgv-u4-5ih"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Groups" id="chx-i5-2o5">
                         <barButtonItem key="rightBarButtonItem" title="All groups" id="3WX-zw-6Kp">
@@ -176,14 +189,29 @@
         <!--All groups-->
         <scene sceneID="Y6P-eA-X5C">
             <objects>
-                <viewController id="VyJ-hS-xdY" sceneMemberID="viewController">
+                <viewController id="VyJ-hS-xdY" customClass="AllGroupsController" customModule="Friends2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0H7-ek-nmj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Y8-EJ-fX9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pIY-no-Zqj"/>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pIY-no-Zqj" firstAttribute="trailing" secondItem="0Y8-EJ-fX9" secondAttribute="trailing" id="DlV-ba-YAP"/>
+                            <constraint firstItem="0Y8-EJ-fX9" firstAttribute="leading" secondItem="pIY-no-Zqj" secondAttribute="leading" id="Xu2-MO-hhH"/>
+                            <constraint firstItem="0Y8-EJ-fX9" firstAttribute="top" secondItem="pIY-no-Zqj" secondAttribute="top" id="r5r-Es-GPW"/>
+                            <constraint firstItem="pIY-no-Zqj" firstAttribute="bottom" secondItem="0Y8-EJ-fX9" secondAttribute="bottom" id="ziu-Wb-kba"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="All groups" id="hH1-Ub-R7n"/>
+                    <connections>
+                        <outlet property="tableView" destination="0Y8-EJ-fX9" id="dHq-lk-ESf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9S7-5d-niO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,6 +239,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="izK-Mi-wXp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dIa-RX-KEA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -266,5 +295,8 @@
     </scenes>
     <resources>
         <image name="657118" width="1280" height="872"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
